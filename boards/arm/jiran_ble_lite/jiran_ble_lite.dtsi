@@ -53,7 +53,7 @@
 
 &jiran_ble_lite_full_layout {
     transform = <&default_transform>;
-}
+};
 
 
 &adc {
