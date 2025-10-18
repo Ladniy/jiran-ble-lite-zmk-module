@@ -7,7 +7,8 @@
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <jiran-layouts.dtsi>
+#include "jiran-layouts.dtsi"
+
 / {
 	model = "jiran_ble_lite";
 	compatible = "jiran_ble_lite";
@@ -49,6 +50,10 @@
 		full-ohms = <(2000000 + 820000)>;
 	};
 };
+
+&jiran_ble_lite_full_layout {
+    transform = <&default_transform>;
+}
 
 
 &adc {
