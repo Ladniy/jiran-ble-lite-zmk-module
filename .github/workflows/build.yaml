@@ -1,0 +1,16 @@
+
+name: Build ZMK firmware
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
+include:
+  - board: jiran_ble_lite_left
+
+  - board: jiran_ble_lite_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: jiran_ble_lite_left_with_studio
+
+  - board: jiran_ble_lite_right
